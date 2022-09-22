@@ -1,47 +1,21 @@
-import { Fragment } from "react";
+import "./form-input.styles.scss";
 
-const FormInput = (props) => {
-  const { handleChange, formFields } = props;
-  const { displayName, email, password, confirmPassword } = formFields;
+const FormInput = ({ label, ...otherProps }) => {
   return (
-    <Fragment>
-      <label>Display Name</label>
-      <input
-        type="text"
-        required
-        onChange={handleChange}
-        name="displayName"
-        value={displayName}
-      />
+    <div className="group">
+      <input className="form-input" {...otherProps} />
+      {label && (
+        <label
+          className={`${
+            otherProps.value.length ? "shrink" : ""
+          } form-input-label`}
+        >
+          {label}
+        </label>
+      )}
 
-      <label>Email</label>
-      <input
-        type="email"
-        required
-        onChange={handleChange}
-        name="email"
-        value={email}
-      />
-
-      <label>Password</label>
-      <input
-        type="password"
-        required
-        onChange={handleChange}
-        name="password"
-        value={password}
-      />
-
-      <label>Confirm Password</label>
-      <input
-        type="password"
-        required
-        onChange={handleChange}
-        name="confirmPassword"
-        value={confirmPassword}
-      />
-      <button type="submit">Sign Up</button>
-    </Fragment>
+      {/* <button type="submit">Sign Up</button> */}
+    </div>
   );
 };
 
