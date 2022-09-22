@@ -11,8 +11,6 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
-  console.log(formFields);
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormFields({
@@ -24,11 +22,7 @@ const SignUpForm = () => {
   return (
     <div>
       <h1>Sign Up with your email and password</h1>
-      <form
-        onSubmit={(event) => {
-          handleChange(event);
-        }}
-      >
+      <form onSubmit={() => {}}>
         <label>Display Name</label>
         <input
           type="text"
