@@ -13,8 +13,6 @@ const FormInput = ({ label, ...otherProps }) => {
           {label}
         </label>
       )}
-
-      {/* <button type="submit">Sign Up</button> */}
     </div>
   );
 };
