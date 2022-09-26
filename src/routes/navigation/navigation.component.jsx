@@ -6,9 +6,21 @@ import { UserContext } from "../../components/contexts/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+import { CartContext } from "../../components/contexts/cart.context";
 
 const Navigation = () => {
   const { curentUser } = useContext(UserContext);
+  const { cartStatus, setCartStatus } = useContext(CartContext);
+
+  const handleDropdown = (event) => {
+    console.log("STATUS: ", cartStatus);
+
+    if (cartStatus == false) {
+      setCartStatus(true);
+    } else {
+      setCartStatus(false);
+    }
+  };
 
   return (
     <Fragment>
@@ -29,9 +41,14 @@ const Navigation = () => {
               SIGN IN
             </Link>
           )}
-          <CartIcon />
+          <CartIcon handleDropdown={handleDropdown} />
         </div>
-        <CartDropdown />
+        {cartStatus == true ? (
+          <CartDropdown style="none" />
+        ) : (
+          <span style={{ display: "none" }}></span>
+        )}
+        {/* <CartDropdown /> */}
       </div>
       <Outlet />
     </Fragment>
