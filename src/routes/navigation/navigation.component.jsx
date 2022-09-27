@@ -10,17 +10,7 @@ import { CartContext } from "../../components/contexts/cart.context";
 
 const Navigation = () => {
   const { curentUser } = useContext(UserContext);
-  const { cartStatus, setCartStatus } = useContext(CartContext);
-
-  const handleDropdown = (event) => {
-    console.log("STATUS: ", cartStatus);
-
-    if (cartStatus == false) {
-      setCartStatus(true);
-    } else {
-      setCartStatus(false);
-    }
-  };
+  const { isCartOpen } = useContext(CartContext);
 
   return (
     <Fragment>
@@ -41,14 +31,9 @@ const Navigation = () => {
               SIGN IN
             </Link>
           )}
-          <CartIcon handleDropdown={handleDropdown} />
+          <CartIcon />
         </div>
-        {cartStatus == true ? (
-          <CartDropdown style="none" />
-        ) : (
-          <span style={{ display: "none" }}></span>
-        )}
-        {/* <CartDropdown /> */}
+        {isCartOpen && <CartDropdown />}
       </div>
       <Outlet />
     </Fragment>
