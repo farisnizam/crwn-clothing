@@ -20,12 +20,12 @@
       height: 240px;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
+      overflow: scroll;
 
-      &:hover {
-        overflow: scroll;
+      // &:hover {
+      //   overflow: scroll;
 
-      }
+      // }
     
     }
     button {
