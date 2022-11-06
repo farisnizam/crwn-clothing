@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect, Fragment } from "react";
-import { CategoriesCotext } from "../../components/contexts/categories.context";
+import { CategoriesCotext } from "../../contexts/categories.context";
 import { useParams } from "react-router-dom";
 import "./category.styles.scss";
 import ProductCard from "../../components/product-card/product-card.component";
