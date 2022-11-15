@@ -6,9 +6,6 @@ export const CART_INITIAL_STATE = {
 };
 
 export const cartReducer = (state = CART_INITIAL_STATE, action = {}) => {
-  console.log("dispatched");
-  console.log(action);
-
   const { type, payload } = action;
 
   switch (type) {
