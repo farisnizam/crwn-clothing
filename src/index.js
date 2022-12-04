@@ -10,10 +10,12 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { persistor, store } from "./store/store";
 
-import "./index.scss";
+// import "./index.scss";
+import { GlobalStyle } from "./global.styles";
 
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyle />
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
