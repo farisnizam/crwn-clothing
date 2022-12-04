@@ -11,7 +11,6 @@ import reportWebVitals from "./reportWebVitals";
 import { persistor, store } from "./store/store";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
-// import "./index.scss";
 import { GlobalStyle } from "./global.styles";
 
 ReactDOM.render(
